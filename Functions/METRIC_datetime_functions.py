@@ -1,3 +1,10 @@
+"""
+METRIC_datetime_functions.py
+Provides support for METRIC datetime functions.
+author: sulochandhungel<at>gmail.com
+date: 20160527
+"""
+
 from Common_Functions import *
 from ArcGIS_functions_4_METRIC import *
 import datetime
