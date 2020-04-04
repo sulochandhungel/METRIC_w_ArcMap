@@ -9,8 +9,10 @@ Functions:
    
 ### csv_functions.py
     These functions were built to extract data from csv without using base python functions. This was used for weather data extraction.
+    
     extractLatLongfromCSV - Extract SiteID, Longitude, Latitude, Installation Date.
     make_ptSHP_from_CSV - Create an unprojected lat-long shapefile from csvfile.
+    
     From a csv file,
         getrow - Extract a row based on row number
         getrow_from_rowName - Extract a row based on row name
