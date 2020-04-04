@@ -18,7 +18,7 @@ def get_MtDtFname(MtDt_directory, withpath = "TRUE"):
     else:
         return mtdata_filename
 
-
+# FUNCTION 2: To extract metadata value from MTL file
 def get_MtDt(MtDt_PathFname, output = "all"):
     varbs_from_mtfile = []
     varbs_values_from_mtfile = []
@@ -72,6 +72,8 @@ def get_MtDt(MtDt_PathFname, output = "all"):
 ##ans = display_MtDt(MtDt_directory, output)
 ##print ans
 
+
+# FUNCTION 3: Get Scene Center from Metadata file 
 def scene_center(MtDtFileName):
     '''
     This function returns the scene center based on metadata file.
@@ -112,6 +114,8 @@ def scene_center(MtDtFileName):
     return [Center_Lon, Center_Lat]
 
 
+
+# FUNCTION 4: Make a point shapefile using Latitude, Longitude and ID 
 def make_ptSHP_from_LatLong(Longitude, Latitude, PtID, PtShpFName = ""):
     w = shapefile.Writer(shapefile.POINT)
     w.field('PtID', 'C', 40)
