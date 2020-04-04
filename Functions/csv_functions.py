@@ -1,3 +1,10 @@
+"""
+csv_functions.py
+Provides read and write support for METRIC for csv files.
+author: sulochandhungel<at>gmail.com
+date: 20160416
+"""
+
 import os
 
 import csv
