@@ -24,7 +24,8 @@ Functions:
 
 ### METRIC_datetime_functions.py
     These functions were built to extract and manipulate datetime between image and weather stations.
-    Some of these functions require a timezone shapefile ("Timezone.shp") which has information on spatial DLS and timezone data.  
+    Some of these functions require a timezone shapefile ("Timezone.shp") 
+    which has information on spatial DLS and timezone data.  
     
     project_shp_to_DEMproj - Project shapefile to DEM projection
     add_TZ_and_DLS_2_shp - Spatially join a point shapefile to the Timezone.shp shapefile
