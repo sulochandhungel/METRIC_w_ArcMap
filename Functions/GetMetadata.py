@@ -1,4 +1,8 @@
 def get_MtDt(MtDt_PathFname, output = "all"):
+    '''
+    This function extracts metadata value from .MTL file.    
+   '''
+
     varbs_from_mtfile = []
     varbs_values_from_mtfile = []
     result = {}
