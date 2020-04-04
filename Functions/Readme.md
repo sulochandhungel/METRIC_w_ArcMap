@@ -1,6 +1,6 @@
 Functions:
 
-#GetMetadata.py
+# GetMetadata.py
     Extract metadata value from .MTL file
 
 
