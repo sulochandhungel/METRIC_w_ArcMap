@@ -5,6 +5,10 @@ import shapefile
 
 # FUNCTION 1: To get metadata filename from directory
 def get_MtDtFname(MtDt_directory, withpath = "TRUE"):
+    '''
+    This function gets the metadata file from the directory with Landsat Data
+    '''
+    
     working_dir = os.getcwd()
     os.chdir(MtDt_directory)
     filelist = os.listdir(MtDt_directory)
@@ -18,8 +22,22 @@ def get_MtDtFname(MtDt_directory, withpath = "TRUE"):
     else:
         return mtdata_filename
 
+    
+    
+    
 # FUNCTION 2: To extract metadata value from MTL file
 def get_MtDt(MtDt_PathFname, output = "all"):
+    '''
+    This function extracts the metadata value based on a field from MTL file
+    
+    e.g.
+    
+    MtDt_directory = "C:\\Users\\Sulochan\\Sulochan\\METRIC_Python_Model\\Landsat8\\RequiredFiles"
+    output = "EARTH_SUN_DISTANCE"
+    ans = display_MtDt(MtDt_directory, output)
+    print ans
+    '''
+    
     varbs_from_mtfile = []
     varbs_values_from_mtfile = []
     result = {}
@@ -65,12 +83,7 @@ def get_MtDt(MtDt_PathFname, output = "all"):
         return None
     
 
-# --- Example for the function ---
 
-##MtDt_directory = "C:\\Users\\Sulochan\\Sulochan\\METRIC_Python_Model\\Landsat8\\RequiredFiles"
-##output = "EARTH_SUN_DISTANCE"
-##ans = display_MtDt(MtDt_directory, output)
-##print ans
 
 
 # FUNCTION 3: Get Scene Center from Metadata file 
@@ -117,6 +130,20 @@ def scene_center(MtDtFileName):
 
 # FUNCTION 4: Make a point shapefile using Latitude, Longitude and ID 
 def make_ptSHP_from_LatLong(Longitude, Latitude, PtID, PtShpFName = ""):
+    ''' 
+    This function makes a point shapefile using Latitude, Longitude.
+    
+    e.g.
+    
+    MtDt_directory = "C:\\Users\\Sulochan\\Sulochan\\METRIC_Python_Model\\Landsat8\\RequiredFiles"
+    MtDt_Fname = get_MtDtFname(MtDt_directory)
+    get_MtDt(MtDt_Fname, output = "SUN_ELEVATION")
+    Scene_Center = print scene_center(MtDt_Fname)
+
+    tt = make_ptSHP_from_LatLong(Scene_Center[0], Scene_Center[1], "")    
+    
+    '''
+    
     w = shapefile.Writer(shapefile.POINT)
     w.field('PtID', 'C', 40)
     w.field('Longitude')
@@ -133,9 +160,4 @@ def make_ptSHP_from_LatLong(Longitude, Latitude, PtID, PtShpFName = ""):
     
     
 
-#MtDt_directory = "C:\\Users\\Sulochan\\Sulochan\\METRIC_Python_Model\\Landsat8\\RequiredFiles"
-#MtDt_Fname = get_MtDtFname(MtDt_directory)
-#get_MtDt(MtDt_Fname, output = "SUN_ELEVATION")
-#Scene_Center = print scene_center(MtDt_Fname)
 
-#tt = make_ptSHP_from_LatLong(Scene_Center[0], Scene_Center[1], "")
