@@ -1,3 +1,10 @@
+"""
+Common_Functions.py
+Provides read and write support for METRIC.
+author: sulochandhungel<at>gmail.com
+date: 20160525
+"""
+
 import os
 import arcpy
 import shapefile
